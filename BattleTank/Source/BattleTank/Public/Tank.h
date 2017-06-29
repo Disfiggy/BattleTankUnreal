@@ -7,7 +7,9 @@
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h" // Paste new includes above this
 
+// Forward declarations
 class UTankBarrel;
+class UTankAimingComponent;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
