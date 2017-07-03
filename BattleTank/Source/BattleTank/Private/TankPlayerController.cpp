@@ -8,9 +8,7 @@
 void ATankPlayerController::BeginPlay() 
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("PlayerController Begin Play"))
-
-
+	
 	auto ControlledTank = GetControlledTank(); // Creating a variable and inserting the currently controlled tank there
 
 	if (!ControlledTank) 
