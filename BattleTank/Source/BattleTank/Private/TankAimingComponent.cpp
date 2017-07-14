@@ -81,7 +81,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 		// No aim solution found
 }
 
-int UTankAimingComponent::GetAmmoLeft() const
+int32 UTankAimingComponent::GetAmmoLeft() const
 {
 	return AmmoLeft;
 }
