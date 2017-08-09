@@ -6,6 +6,23 @@
 #include "Tank.h"
 #include "TankAIController.h"
 
+void ATankPlayerController::SetPawn(APawn* InPawn) 
+{
+	Super::SetPawn(InPawn);
+	if (InPawn)
+	{
+		auto PossessedTank = Cast<ATank>(InPawn);
+		if (!ensure(PossessedTank)) { return; }
+
+		PossessedTank->OnDeath.AddUniqueDynamic(this, &ATankPlayerController::OnPossessedTankDeath);
+	}
+}
+
+void ATankPlayerController::OnPossessedTankDeath()
+{
+	GetWorld()->GetFirstPlayerController()->ConsoleCommand("quit");
+}
+
 void ATankPlayerController::BeginPlay() 
 {
 	Super::BeginPlay();
